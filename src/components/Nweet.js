@@ -8,10 +8,9 @@ const Nweet = ({ nweetObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
   const [newNweet, setNewNweet] = useState(nweetObj.text);
 
-  const desertRef = ref(storageService.nweetObj.attachmentUrl);
-
   const onDeleteClick = async () => {
     const ok = window.confirm("삭제하시겠습니까?");
+    const desertRef = ref(storageService.nweetObj.attachmentUrl);
     if (ok) {
       try {
         await deleteDoc(NweetTextRef);
